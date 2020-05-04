@@ -1,0 +1,8 @@
+<mat-toolbar class="mat-primary">
+<h3>ADMIN PORTAL</h3>
+  <span class="example-spacer"></span>
+  <a *ngIf="loggedIn" mat-button>View Book List</a>
+  <a *ngIf="loggedIn" mat-button>Add a Book</a>
+  <a *ngIf="loggedIn" mat-button>Logout</a>
+  <a *ngIf="!loggedIn" mat-button>Login</a>
+</mat-toolbar>
