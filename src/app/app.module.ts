@@ -2,19 +2,31 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {MatButtonModule} from '@angular/material/button';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { LoginComponent } from './components/login/login.component';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AngularMaterialModule} from './angular-material.module';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {AppRoutingModule} from './app-routing.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    MatButtonModule,
-    MatToolbarModule
+    FormsModule,
+    AngularMaterialModule,
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

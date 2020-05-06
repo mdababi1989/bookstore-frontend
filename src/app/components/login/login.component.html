@@ -1,0 +1,25 @@
+<div *ngIf="!loginService.loggedIn; else loggedIn">
+  <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Log in</mat-card-title>
+      </mat-card-header>
+      <form class="example-form" (ngSubmit)="onSubmit()">
+        <mat-card-content>
+          <mat-form-field class="full-width-input">
+            <input type="text" matInput [(ngModel)]="credential.username" name="username" id='username'
+                   placeholder="Your Username">
+          </mat-form-field>
+          <mat-form-field class="full-width-input">
+            <input type="password" matInput [(ngModel)]="credential.password" name="password" id='password'
+                   placeholder="Your Password">
+          </mat-form-field>
+        </mat-card-content>
+        <button mat-stroked-button color="accent" class="btn-block">Log in</button>
+      </form>
+    </mat-card>
+  </div>
+</div>
+<ng-template #loggedIn>
+  You are logged in
+</ng-template>
