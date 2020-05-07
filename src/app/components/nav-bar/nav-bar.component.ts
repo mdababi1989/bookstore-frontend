@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from '../../services/login.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,7 +9,7 @@ import {LoginService} from '../../services/login.service';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(public loginService: LoginService) { }
+  constructor(public loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -23,5 +24,6 @@ export class NavBarComponent implements OnInit {
         console.log(error);
       }
     );
+    this.router.navigate(['/']);
   }
 }

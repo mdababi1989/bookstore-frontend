@@ -30,6 +30,7 @@ export class LoginService {
     const url = 'http://localhost:8181/user/logout';
     const reqHeaders = new HttpHeaders().set('x-auth-token', localStorage.getItem('xAuthToken'));
     return this.httpClient.post(url, '', {headers: reqHeaders});
+
   }
 
 }

@@ -1,2 +1,13 @@
 <app-nav-bar></app-nav-bar>
-<router-outlet></router-outlet>
+<div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+  <div class="item item-4" fxFlex
+       fxFlexOffset="50px"  fxFlexOffset.xs="0" style="background-color: aqua;">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
