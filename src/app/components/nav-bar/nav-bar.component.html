@@ -1,8 +1,8 @@
 <mat-toolbar class="mat-primary">
 <h3>ADMIN PORTAL</h3>
   <span class="example-spacer"></span>
-  <a *ngIf="loginService.loggedIn" mat-button>View Book List</a>
-  <a *ngIf="loginService.loggedIn" routerLink="/addBook" mat-button>Add a Book</a>
+  <a *ngIf="loginService.loggedIn" routerLinkActive="active" routerLink="/bookList" mat-button>View Book List</a>
+  <a *ngIf="loginService.loggedIn" routerLinkActive="active" routerLink="/addBook" mat-button (click)="bookService.reset()">Add a Book</a>
   <a *ngIf="loginService.loggedIn" mat-button (click)="onLogout()">Logout</a>
   <a *ngIf="!loginService.loggedIn" routerLink="/login" mat-button>Login</a>
 </mat-toolbar>

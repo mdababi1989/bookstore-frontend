@@ -11,13 +11,15 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AddBookComponent} from './components/add-book/add-book.component';
+import {BookListComponent} from "./components/book-list/book-list.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     LoginComponent,
-    AddBookComponent
+    AddBookComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule,

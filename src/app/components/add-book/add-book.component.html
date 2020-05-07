@@ -1,4 +1,4 @@
-<div *ngIf="!this.bookAdded; else bookAddedSuccessfully">
+<div *ngIf="!this.bookService.bookAdded; else bookAddedSuccessfully">
   <h3 style="margin-top: 10px;text-align: center;">Add New Book</h3>
   <form (ngSubmit)="onSubmit()">
     <mat-card class="my-card">
@@ -118,8 +118,7 @@
           </mat-grid-tile>
           <mat-grid-tile colspan="4">
             <mat-label>Image</mat-label>
-            <input id="image" type="file" id="bookImage" name="bookImage">
-            <!-- (change)="uploadImageService.fileChangeEvent($event)"-->
+            <input type="file" id="bookImage" name="bookImage" (change)="uploadImageService.fileChangeEvent($event)">
           </mat-grid-tile>
         </mat-grid-list>
       </mat-card-content>
@@ -130,7 +129,7 @@
     </mat-card>
   </form>
 </div>
-<ng-template #bookAddedSuccessfully>
+<ng-template #bookAddedSuccessfully >
   Book added successfully
 </ng-template>
 
