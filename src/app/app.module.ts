@@ -11,8 +11,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AddBookComponent} from './components/add-book/add-book.component';
-import {BookListComponent} from './components/book-list/book-list.component';
+import {BookListComponent, DialogResultExampleDialog} from './components/book-list/book-list.component';
 import {ViewBookComponent} from './components/view-book/view-book.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {EditBookComponent} from "./components/edit-book/edit-book.component";
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {ViewBookComponent} from './components/view-book/view-book.component';
     LoginComponent,
     AddBookComponent,
     BookListComponent,
-    ViewBookComponent
+    ViewBookComponent,
+    EditBookComponent,
+    DialogResultExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,8 @@ import {ViewBookComponent} from './components/view-book/view-book.component';
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

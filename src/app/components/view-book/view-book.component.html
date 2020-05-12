@@ -1,7 +1,7 @@
 
 <div class="container">
   <div style="margin-top: 20px;">
-    <a routerLink="/bookList"><i class="fa fa-long-arrow-left"></i> Go Back</a>
+    <a routerLink="/bookList"><fa-icon [icon]="faLongArrowLeft"></fa-icon> Go Back</a>
     <span> / </span>
     <a (click)="onSelect(book)" style="cursor: pointer">Edit</a>
   </div>
@@ -9,7 +9,7 @@
     <mat-grid-tile [colspan]="3" [rowspan]="5">
       <div class="panel panel-default">
         <div class="panel-body">
-          <img [src]="retrievedImage" class="responsive-img">
+          <img [src]="imgUrl" class="responsive-img">
         </div>
       </div>
     </mat-grid-tile>

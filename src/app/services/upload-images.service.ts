@@ -14,23 +14,17 @@ export class UploadImagesService {
 
 
   upload(bookId: number) {
-    this.makeFileRequest('http://localhost:8181/book/add/image?id=' + bookId, [], this.filesToUpload)
-      .then(
-        (result) => {
-          console.log(result);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-  }
-
-  getImage(bookId: number) {
-    const url = 'http://localhost:8181/book/get/image?id=' + bookId;
-    const reqHeaders = new HttpHeaders()
-      .set('x-auth-token', localStorage.getItem('xAuthToken'));
-    return this.httpClient.get(url, {headers: reqHeaders});
-
+    if (this.filesToUpload.length > 0) {
+      this.makeFileRequest('http://localhost:8181/book/add/image?id=' + bookId, [], this.filesToUpload)
+        .then(
+          (result) => {
+            console.log(result);
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+    }
   }
 
   // react to file changes made by the user. A change occurs if the user selects a file
