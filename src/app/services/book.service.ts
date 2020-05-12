@@ -19,13 +19,19 @@ export class BookService {
     return this.httpClient.post(url, JSON.stringify(book), {headers: reqHeaders});
   }
 
-  getBookList(){
+  getBookList() {
     const url = 'http://localhost:8181/book/list';
     const reqHeaders = new HttpHeaders().set('x-auth-token', localStorage.getItem('xAuthToken'));
     return this.httpClient.get(url, {headers: reqHeaders});
   }
 
-  reset(){
+  getBook(id: number) {
+    const url = 'http://localhost:8181/book/' + id;
+    const reqHeaders = new HttpHeaders().set('x-auth-token', localStorage.getItem('xAuthToken'));
+    return this.httpClient.get(url, {headers: reqHeaders});
+  }
+
+  reset() {
     this.bookAdded = false;
   }
 }

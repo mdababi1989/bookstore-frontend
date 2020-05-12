@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ export class UploadImagesService {
 
   filesToUpload: Array<File>;
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
     this.filesToUpload = [];
   }
 
@@ -24,9 +25,17 @@ export class UploadImagesService {
       );
   }
 
-  //react to file changes made by the user. A change occurs if the user selects a file
+  getImage(bookId: number) {
+    const url = 'http://localhost:8181/book/get/image?id=' + bookId;
+    const reqHeaders = new HttpHeaders()
+      .set('x-auth-token', localStorage.getItem('xAuthToken'));
+    return this.httpClient.get(url, {headers: reqHeaders});
+
+  }
+
+  // react to file changes made by the user. A change occurs if the user selects a file
   fileChangeEvent(fileInput: any) {
-    this.filesToUpload = <Array<File>>fileInput.target.files; //get access to the files and store them
+    this.filesToUpload = <Array<File>>fileInput.target.files; // get access to the files and store them
   }
 
   private makeFileRequest(url: string, params: Array<string>, files: Array<File>) {

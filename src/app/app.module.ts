@@ -11,7 +11,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AddBookComponent} from './components/add-book/add-book.component';
-import {BookListComponent} from "./components/book-list/book-list.component";
+import {BookListComponent} from './components/book-list/book-list.component';
+import {ViewBookComponent} from './components/view-book/view-book.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {BookListComponent} from "./components/book-list/book-list.component";
     NavBarComponent,
     LoginComponent,
     AddBookComponent,
-    BookListComponent
+    BookListComponent,
+    ViewBookComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Book} from "../../models/book";
-import {BookService} from "../../services/book.service";
+import {Book} from '../../models/book';
+import {BookService} from '../../services/book.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-book-list',
@@ -14,8 +15,7 @@ export class BookListComponent implements OnInit {
   public allChecked: boolean;
   private removeBookList: Book[] = new Array();
 
-  constructor(private bookService: BookService) {
-  }
+  constructor(private bookService: BookService, private router: Router) {}
 
   ngOnInit(): void {
     this.bookService.getBookList().subscribe(
@@ -23,7 +23,7 @@ export class BookListComponent implements OnInit {
         this.bookList = res;
       },
       error => console.log(error)
-    )
+    );
   }
 
   updateSelected(checked: boolean) {
@@ -35,7 +35,8 @@ export class BookListComponent implements OnInit {
   }
 
   onSelect(book: Book) {
-
+    this.selectedBook = book;
+    this.router.navigate(['/viewBook', this.selectedBook.id]);
   }
 
   openDialog(book: Book) {
